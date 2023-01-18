@@ -66,7 +66,7 @@ export const GithubProvider = ({children}) => {
         setLoading()
         
         const params = new URLSearchParams({
-            sort : 'latest',
+            sort : 'date',
             per_page: '10'
         }) 
 
@@ -92,10 +92,7 @@ export const GithubProvider = ({children}) => {
     return (
         <GithubContext.Provider 
         value={{
-            users: state.users,
-            loading: state.loading,
-            user: state.user,
-            repos: state.repos,
+            ...state,
             searchUsers, 
             clearUsers,
             getUser,

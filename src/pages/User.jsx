@@ -13,6 +13,7 @@ function User() {
     useEffect(() => {
         getUser(params.login)
         getUserRepos(params.login)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const { 
@@ -108,7 +109,7 @@ function User() {
                             <FaUsers className='text-3xl md:text-5xl' />
                         </div>
                         <div className="stat-title pr-5">
-                            Follow
+                            Followers
                         </div>
                         <div className="stat-value pr-5 text-3xl">
                         {followers}
